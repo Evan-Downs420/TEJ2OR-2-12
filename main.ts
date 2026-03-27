@@ -7,7 +7,7 @@
 
 // variable
 let neopixelStrip: neopixel.Strip = null
-let d
+let distance = 0
 
 // clean
 basic.clearScreen()
@@ -21,6 +21,15 @@ basic.showIcon(IconNames.Happy)
 
 // press a
 input.onButtonPressed(Button.A, function(){
-
-
+    if (distance = 10) {0
+      basic.clearScreen()
+      neopixelStrip = neopixel.create(DigitalPin.P16, 4, NeoPixelMode.RGB)
+      neopixelStrip.setPixelColor(0, neopixel.colors(NeoPixelColors.Red))
+      neopixelStrip.setPixelColor(1, neopixel.colors(NeoPixelColors.Red))
+      neopixelStrip.setPixelColor(2, neopixel.colors(NeoPixelColors.Red))
+      neopixelStrip.setPixelColor(3, neopixel.colors(NeoPixelColors.Red))
+      neopixelStrip.show()
+  } else {
+    
+}    
 })
