@@ -6,30 +6,22 @@
 */
 
 // variable
-let neopixelStrip: neopixel.Strip = null
+const strip = neopixel.create(DigitalPin.P16, 4, NeoPixelMode.RGB)
 let distance = 0
 
-// clean
-basic.clearScreen()
-neopixelStrip = neopixel.create(DigitalPin.P16, 4, NeoPixelMode.RGB)
-neopixelStrip.setPixelColor(0, neopixel.colors(NeoPixelColors.Black))
-neopixelStrip.setPixelColor(1, neopixel.colors(NeoPixelColors.Black))
-neopixelStrip.setPixelColor(2, neopixel.colors(NeoPixelColors.Black))
-neopixelStrip.setPixelColor(3, neopixel.colors(NeoPixelColors.Black))
-neopixelStrip.show()
+strip.clear()
+strip.show()
+
 basic.showIcon(IconNames.Happy)
 
 // press a
 input.onButtonPressed(Button.A, function(){
-    if (distance = 10) {0
-      basic.clearScreen()
-      neopixelStrip = neopixel.create(DigitalPin.P16, 4, NeoPixelMode.RGB)
-      neopixelStrip.setPixelColor(0, neopixel.colors(NeoPixelColors.Red))
-      neopixelStrip.setPixelColor(1, neopixel.colors(NeoPixelColors.Red))
-      neopixelStrip.setPixelColor(2, neopixel.colors(NeoPixelColors.Red))
-      neopixelStrip.setPixelColor(3, neopixel.colors(NeoPixelColors.Red))
-      neopixelStrip.show()
+    sonar.ping(DigitalPin.P8, DigitalPin.P12, PingUnit.Centimeters)
+    if (distance < 10) {
+      strip.showColor(neopixel.colors(NeoPixelColors.Red))
   } else {
-    
-}    
+        strip.showColor(neopixel.colors(NeoPixelColors.Green))
+  }
+  strip.show()
+  basic.showNumber(distance)
 })
