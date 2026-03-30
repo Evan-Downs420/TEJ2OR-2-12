@@ -7,7 +7,7 @@
 
 // variable
 const strip = neopixel.create(DigitalPin.P16, 4, NeoPixelMode.RGB)
-let distance = 0
+const distance = 0
 
 strip.clear()
 strip.show()
